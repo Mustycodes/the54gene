@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>54gene - About Us</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles/aboutUs.css">
+</head>
+<body>
+  <header class="other-header">
+    <!-- NAVIGATION -->
+    <nav class="nav">
+      <!-- LOGO -->
+      <div class="page-logo">
+        <img src="/images/54gene_Logo.svg" alt="Page Logo" />
+      </div>
+      <!-- NAVIGATION LINKS -->
+      <a href="#" class="toggleNav">☰</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="covid19.html">Covid-19</a></li>
+        <li><a href="aboutUs.html">About Us</a></li>
+        <li><a href="science.html">Science</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="pressAndEvents.html">Press & Events</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <div class="secondary-hero">
+      <p class="hero_sub-heading">About Us</p>
+      <h2 class="hero-heading">Improving the inclusion of African populations in global genomics research</h2> 
+    </div>
+  </header>
+  <main>
+    <section class="flex-container">
+      <div class="col col-6">
+      <h2>Our Goal</h2>
+      <p>We aim to build genetic data sets that make landmark discoveries a reality.</p>
+      <p>Africans house the most genetically diverse DNA in comparison to all other world populations combined. In gathering insights from the African genome, we could power medical breakthroughs and discoveries that will change the entire landscape of healthcare, globally. We fully recognise the tremendous potential that this presents.</p>
+      <p>Presently, most genomic data used for development research is from Europe, United Kingdom and North America with African genomic data only accounting for less than 3%. This is where we come in. We exist to close this gap by increasing access to highly curated genomic data from African populations.</p>
+      </div>
+      <div class="col col-6">
+        <img src="images/avel-chuklanov-9cx4-QowgLc-unsplash.jpg" alt="">
+      </div>
+    </section>
+
+    <section class="our-partners">
+      <h3 class="heading">We are backed by prestigious global partners</h3>
+
+    </section>
+
+    <section>
+      <h3 class="heading">Our Team</h3>
+      <p class="details">Our management team of experts bring just over 100 years worth of combined experience and technical expertise to the forefront. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa blanditiis sint, illum vero dolorem laborum veniam asperiores repudiandae odio velit consequuntur possimus qui nostrum porro debitis officiis hic quisquam id.</p>
+      <div class="team-container">
+        
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="flex-container">
+      <div class="footer-logo">
+        <img src="images/symbol.svg" alt="54gene Symbol">
+      </div>
+      <div class="footer-links flex-container">
+        <div><a href="#">FAQ</a></div>
+        <div><a href="#">Code Of Conduct</a></div>
+        <div><a href="#">ABC Policy</a></div>
+        <div><a href="#">Careers</a></div>
+        <div><a href="#">Blog</a></div>
+      </div>
+      <div class="socials flex-container">
+        <div><a href="#"><i class="fas fa-twitter"></i></a></div>
+        <div><a href="#"><i class="fa fa-facebook"></i></a></div>
+        <div><a href="#"><i class="fa fa-linkedin"></i></a></div>
+        <div><a href="#"><i class="fa fa-instagram"></i></a></div>
+        <div><a href="#"><i class="fa fa-instagram"></i></a></div>
+      </div>
+    </div>
+    <div class="contact">
+      <p>Phone:+234 700 342 466 7363</p>
+      <p>Locations: Lagos, Nigeria & Washington, D.C., USA</p>
+    </div>
+  </footer>
+
+  <script>
+    const partners = document.querySelector('.our-partners');
+const teamDiv = document.querySelector('.team-container');
+
+// Add Partners Dynamically
+function renderPartnerLogo() {
+  let logoContainer = document.createElement('div');
+  logoContainer.className = 'logo-container';
+  for (let i = 1; i < 9; i += 1) {
+    let logo = document.createElement('img');
+    logo.setAttribute('src', `images/partners/${i}.svg`);
+    logo.className = 'logo-image';
+    logoContainer.appendChild(logo);
+}
+partners.appendChild(logoContainer);
+}
+renderPartnerLogo();
+
+
+  function logResult(result) {
+    renderStaff(result);
+  }
+
+function renderStaff(staff) {
+  staff.forEach(person => {
+      let div = document.createElement('div');
+      div.innerHTML = `
+      <img src="${person.image}" alt="">
+      <h4>${person.name}</h4>
+      <p>${person.brief}</p>
+      `;
+      div.className = 'container testimonials';
+      document.querySelector('.team-container').appendChild(div);
+      }); 
+}
+
+function logError(error) {
+  console.log('Looks like there was a problem:', error);
+}
+function validateResponse(response) {
+  if (!response.ok) {
+    throw Error(response.statusText)
+  }
+  return response;
+}
+
+function readResponseAsJson(response) {
+  return response.json();
+}
+
+function fetchJSON() {
+  fetch('/staff.json')
+  .then(validateResponse)
+  .then(readResponseAsJson)
+  .then(logResult)
+  .catch(logError);
+}
+fetchJSON();
+  </script>
+</body>
+</html>

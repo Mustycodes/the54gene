@@ -1,0 +1,275 @@
+:root {
+  --gradient: linear-gradient(to right, red, orange);
+  --text-primary: orangered;
+}
+@font-face {font-family: "Rock_Salt";src: url(font/Rock_Salt/RockSalt-Regular.ttf);font-weight: 800; }
+* { box-sizing: border-box; }
+html {
+  scroll-behavior: smooth;
+}
+body { font-family: "Open Sans", sans-serif; font-size: 16px;
+line-height: 1.4; color: #2b2120; margin: 0; }
+input, button { font-family: inherit; font-size: inherit;
+}
+button { cursor: pointer; }
+a { color: #d9b48fff; text-decoration: none; }
+ul { padding: 0; margin: 0; list-style: none; }
+nav { padding: 10px 0; }
+h1, h2, h3, h4, h5, h6 { margin: 0; }
+section {
+  margin: 0 auto;
+  padding: 70px 10%;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/********* */
+.toggleNav {
+  display: none;
+}
+
+.main-header {
+  background-image: url("/images/jared-rice-NTyBbu66_SI-unsplash.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-blend-mode: overlay;
+}
+
+.nav {
+  max-width: 1280px;
+  display: flex;
+}
+
+.nav > * {
+  flex: 1;
+}
+
+.nav .nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-links li {
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1em;
+  letter-spacing: 1px;
+  padding: 10px 0;
+}
+.nav-links li:hover,
+.nav-links li:active {
+  transform: scale(1.1);
+  border-bottom: 4px solid;
+  border-image: var(--gradient);
+  border-image-slice: 1;
+  transition: transform .3s, border .2s;
+}
+.nav-links a {
+  text-transform: capitalize;
+}
+
+.nav-links li:hover a,
+.nav-links li:active a {
+  color: var(--text-primary);
+  transition: color .3s;
+}
+
+.page-logo img {
+  display: block;
+  margin-left: 17%;
+  max-width: 100%;
+  width: 120px;
+  height: 60px;
+}
+/**************HERO SECTION****************/
+.hero {
+  margin: 0 50px;
+  padding: 70px 55px 30px;
+  height: 100vh;
+}
+
+.hero h1 {
+  font-size: 3vw;
+  padding-bottom: 10px;
+}
+.hero h1 span {
+  color: var(--text-primary);
+  font-family: "Rock_Salt";
+  font-size: 5.5vw;
+}
+/* #ffc107 */
+.hero h1 span:nth-child(2) {
+  color: #28a745;
+}
+.hero h1 span:nth-child(3) {
+  color: #ffc107;
+}
+.hero h1 span:nth-child(4) {
+  color: #6c757d;
+}
+.hero h1 span:nth-child(5) {
+  color: #dc3545;
+}
+.hero h2 {
+  color: whitesmoke;
+  padding-bottom: 10px;
+  font-size: 3.2vw;
+}
+
+.hero a {
+  width: 200px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  border: 1px solid orange;
+  background: hsla(39, 60%, 50%, 0.5);
+  border-radius: 25px;
+  outline: none;
+}
+.hero a:hover {
+  background: var(--gradient);
+}
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.col {
+  position: relative;
+  width: 100%;
+  padding-right: 25px;
+  padding-left: 70px;
+}
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+.col-7 {
+  flex: 0 0 58.333%;
+  max-width: 60%;
+}
+.col-5 {
+  flex: 0 0 41.6667%;
+  max-width: 40%;
+}
+
+section.our-purpose {
+  padding: 0;
+}
+.links {
+  padding: 20px 30px 0px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.links a {
+  color: rgba(0, 0, 0, 0.6);
+}
+.links a:hover {
+  text-decoration: underline;
+  color: orangered;
+}
+
+
+/* General Styles */
+.secondary-hero {
+  background-image: url("/images/jared-rice-NTyBbu66_SI-unsplash.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-blend-mode: overlay;
+  padding: 10px 155px;
+  /* text-transform: uppercase; */
+  height: 40vh;
+}
+.hero_sub-heading {
+  color: whitesmoke;
+  font-size: 1.2em;
+}
+.hero-heading {
+  color: rgb(200, 200, 5);
+  font-size: 2em;
+}
+/* Footer */
+footer {
+  background-color: #1f1f29;
+  padding: 50px 155px;
+  color: #d9b48fff;
+}
+footer > div:first-child > * {
+  flex: 0 0 20%;
+}
+footer div.footer-links {
+  align-items: center;
+  flex: 0 0 50%;
+}
+.footer-links a:hover {
+  text-decoration: underline;
+}
+.footer-links div {
+  padding: 0 10px;
+}
+.contact {
+  text-align: center;
+  margin: 0 auto;
+  padding: 2em 20vw;
+}
+.socials {
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #1f1f29;
+  text-align: center;
+  border: 1px solid transparent;
+  vertical-align: middle;
+  background-color: transparent;
+  padding: .375rem .75rem;
+  line-height: 1.4;
+  border-radius: .3rem;
+}
+.btn-primary {
+  color: white;
+  background-color: #71b168;
+  border-color: #609c58;
+}
+
+
+/* Impact Page*/
+.driving-impact p::before {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 15px;
+  left: -10px;
+  height: 15px;
+  background-image: url("/fontawesome-free-5.11.2-web/svgs/solid/check.svg");
+}
+.genomics-section {
+  position: relative;
+  background-color: hsl(240, 45%, 98%);
+  text-align: center;
+  padding-top: 40px;
+}
+.genomics-section::before {
+  position: absolute;
+  top: -70px;
+  left: 0;
+  right: 0;
+  display: block;
+  content: '';
+  background-image: url('images/bg-curve-desktop.svg');
+  /* background: red; */
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100px;
+  z-index: -1;
+}

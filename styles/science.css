@@ -1,0 +1,71 @@
+.research {
+  text-align: center;
+  padding: 20px 15vw;
+}
+.tab {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+.tab button {
+  display: inline-block;
+  background-color: inherit;
+  flex: 1;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+.tab button:hover {
+  background-color: #ddd;
+}
+
+.tab button.active {
+  background-color: rgb(233, 233, 243);
+  background-color: rgba(217, 180, 143, .6);
+}
+.tabcontent {
+  display: none;
+  background-color: rgb(242, 242, 255);
+  padding: 6px 12px;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+  box-shadow: 0 7px 10px rgba(0, 0, 0, .1);
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+.our-reach {
+  color: whitesmoke;
+  background-image: url('/images/joshua-sortino-XMcoTHgNcQA.jpg');
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+}
+.our-reach h3 {
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.our-reach div {
+  font-size: 1.2em;
+}
+.our-reach p:first-child {
+  font-size: 1.5em;
+  font-weight: 800;
+  color: rgb(204, 136, 26);
+}

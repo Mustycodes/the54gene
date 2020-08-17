@@ -1,0 +1,118 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* background: whitesmoke; */
+  background-image: url("/images/avel-chuklanov-9cx4-QowgLc-unsplash.jpg");
+  background-color: rgba(0, 0, 0, .5);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+}
+
+.form-container {
+  position: relative;
+  width: 100%;
+  /* max-width: 1100px; */
+  margin: 20px;
+  /* height: 600px; */
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .3);
+}
+
+form {
+  position: relative;
+  width: 100%;
+  padding: 0 50px;
+}
+
+form h2 {
+  margin-top: 50px;
+  color: #d9b48fff;
+  font-weight: 500;
+  font-size: 2em;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+form h2 + p {
+  font-size: 1.5em;
+  margin-bottom: 40px;
+}
+
+.input-container {
+  position: relative;
+  margin-bottom: 40px;
+}
+.input-container:last-child {
+  /* margin-bottom: 0; */
+}
+.input-container input,
+.input-container textarea {
+  position: relative;
+  background: transparent;
+  outline: none;
+  border: none;
+  width: 100%;
+  color: #000;
+  padding-bottom: 10px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 300;
+  border-bottom: 2px solid rgba(0, 0, 0, .3);
+  resize: none;
+}
+.input-container textarea {
+  /* height: 100px; */
+}
+.input-container input[type="submit"] {
+  display:block;
+  border-radius: 5px;
+  padding: 10px 20px;
+  width: 120px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: #71b168;
+  margin: 20px auto;
+}
+.input-container input[type="submit"]:hover {
+  background: #4b9541;
+}
+.input-container input[type="submit"]:focus {
+  background: #cbe6dc;
+  color: #111;
+}
+.input-container span {
+  position: absolute;
+  left: 0;
+  font-size: 16px;
+  font-weight: 300;
+  display: inline-block;
+  pointer-events: none;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+}
+.input-container input:focus ~ span,
+.input-container textarea:focus ~ span,
+.input-container input:valid ~ span,
+.input-container textarea:valid ~ span {
+  transform: translateY(-24px);
+  color: #71b168;
+  font-size: 14px;
+}
+.input-container input:focus,
+.input-container textarea:focus,
+.input-container input:valid,
+.input-container textarea:valid {
+  border-bottom-color: #1f1f29;
+}
